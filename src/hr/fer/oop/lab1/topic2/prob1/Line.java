@@ -1,6 +1,8 @@
 package hr.fer.oop.lab1.topic2.prob1;
 
 import hr.fer.oop.lab1.topic2.pic.Picture;
+import hr.fer.oop.lab1.topic2.prob1.Point;
+import hr.fer.oop.lab1.topic2.prob1.Shape;
 
 import java.util.ArrayList;
 
@@ -9,21 +11,42 @@ import java.util.ArrayList;
  * @version = 1.0
  */
 
-public class Line {
+public class Line extends Shape {
+
+    public static int counter;
 
     private Point firstPoint;
     private Point secondPoint;
 
-    private ArrayList<Point> points = new ArrayList<Point>();
 
     public Line(Point firstPoint, Point secondPoint) {
+        super("Rectangle");
         this.firstPoint = firstPoint;
         this.secondPoint = secondPoint;
-        createLine();
+        generatePoints();
+        incrementCounter();
     }
 
-    private void createLine() {
+
+    public Line(Line line) {
+        this(line.firstPoint, line.secondPoint);
+    }
+
+
+    private boolean isHorizontal() {
+        return firstPoint.getY() == secondPoint.getY();
+    }
+
+
+    private static void incrementCounter() {
+        counter++;
+    }
+
+
+    protected void generatePoints() {
+
         if (isHorizontal()) {
+
             int y = firstPoint.getY();
 
             for (int x = firstPoint.getX(); x <= secondPoint.getX(); x++)
@@ -35,20 +58,11 @@ public class Line {
             for (int y = firstPoint.getY(); y <= secondPoint.getY(); y++)
                 points.add(new Point(x, y));
         }
-
-
-    }
-
-    private boolean isHorizontal() {
-        return firstPoint.getY() == secondPoint.getY();
     }
 
 
-    public Line(Line line) {
-        this(line.firstPoint, line.secondPoint);
-    }
 
-
+    @Override
     public void drawOnPicture(Picture picture){
 
         for (Point point : points)

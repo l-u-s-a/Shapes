@@ -17,29 +17,26 @@ public class Demonstration {
 
         Picture picture = new Picture(100, 50);
 
-        Rectangle firstRectangle = new Rectangle(new Point(15, 30), 10, 10);
-        Rectangle secondRectangle = new Rectangle(new Point(30, 30), 5, 5);
+        ArrayList<Shape> shapes = generateShapes();
 
-
-        Circle firstCircle = new Circle(new Point(20, 15), 10);
-        Circle secondCircle = new Circle(new Point(50, 20), 5);
-
-
-        Line firstLine = new Line(new Point(30, 5), new Point(50, 5));
-        Line secondLine = new Line(new Point(40, 20), new Point(40, 40));
-
-
-        firstRectangle.drawOnPicture(picture);
-        secondRectangle.drawOnPicture(picture);
-
-        firstCircle.drawOnPicture(picture);
-        secondCircle.drawOnPicture(picture);
-
-        firstLine.drawOnPicture(picture);
-        secondLine.drawOnPicture(picture);
-
+        for (Shape shape : shapes)
+            shape.drawOnPicture(picture);
 
         PictureDisplay.showPicture(picture, 7);
 
     }
+
+    private static ArrayList<Shape> generateShapes() {
+        ArrayList<Shape> shapes = new ArrayList<Shape>();
+
+        shapes.add(new Rectangle(new Point(15, 30), 10, 10));
+        shapes.add(new Rectangle(new Point(30, 30), 5, 5));
+        shapes.add(new Circle(new Point(20, 15), 10));
+        shapes.add(new Circle(new Point(50, 20), 5));
+        shapes.add(new Line(new Point(30, 5), new Point(50, 5)));
+        shapes.add(new Line(new Point(40, 20), new Point(40, 40)));
+
+        return shapes;
+    }
+
 }
