@@ -3,28 +3,40 @@ package hr.fer.oop.lab1.topic2.prob1;
 import hr.fer.oop.lab1.topic2.pic.Picture;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by luka on 21/10/14.
+ * Created by luka on 09/11/14.
  */
-
-public abstract class Shape {
+public class Shape implements DrawableShape{
+    protected List<Point> points = new ArrayList<Point>();
     private String name;
-    
-    protected ArrayList<Point> points = new ArrayList<Point> ();
-    
-    public Shape(String name){
-        super();
+
+    protected Shape(String name){
         this.name = name;
-//        generatePoints();
-//        incrementCounter();
+        System.out.println("one " + name + " created.");
     }
 
+    @Override
+    public void drawOnPicture(Picture picture){
+        for (Point point : points)
+            picture.turnPixelOn(point.getX(), point.getY());
 
-//    protected abstract void incrementCounter();
+        // Render picture is ASCII-graphics on standard output:
+        picture.renderImageToStream(System.out);
+    }
 
-//    protected abstract void generatePoints();
+    protected void check(int x, int y) {
+        if (x > Main.WIDTH || y > Main.HEIGHT)
+            throw new IllegalArgumentException("Point is out of picture");
+    }
 
-    public abstract void drawOnPicture(Picture picture);
+    protected void addPoint(int x, int y){
+        check(x, y);
+        points.add(new Point(x, y));
+    }
+    public String getName(){
+        return name;
+    }
 
 }

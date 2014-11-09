@@ -36,22 +36,15 @@ public class Circle extends Shape {
             for (int y = center.getY() - radius + 1; y < (center.getY() + radius); y++) {
 
                 if ((Math.pow(x - center.getX(), 2) + Math.pow(y - center.getY(), 2)) <= Math.pow(radius, 2))
-
-                    points.add(new Point(x, y));
+                    addPoint(x, y);
             }
         }
     }
+
+
 
     private static void incrementCounter() {
         counter++;
     }
 
-    @Override
-    public void drawOnPicture(Picture picture) {
-        for (Point point : points)
-            picture.turnPixelOn(point.getX(), point.getY());
-
-        // Render picture is ASCII-graphics on standard output:
-        picture.renderImageToStream(System.out);
-    }
 }

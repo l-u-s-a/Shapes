@@ -43,20 +43,12 @@ public class Rectangle extends Shape{
         for (int x = topLeftCorner.getX(); x <= topLeftCorner.getX() + width; x++) {
             for (int y = topLeftCorner.getY(); y <= topLeftCorner.getY() + height; y++) {
 
-                points.add(new Point(x, y));
+                addPoint(x, y);
             }
         }
     }
 
 
-    @Override
-    public void drawOnPicture(Picture picture){
-        for (Point point : points)
-            picture.turnPixelOn(point.getX(), point.getY());
-
-        // Render picture is ASCII-graphics on standard output:
-        picture.renderImageToStream(System.out);
-    }
 
 }
 
