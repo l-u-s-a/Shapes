@@ -17,7 +17,9 @@ public class RandomShapeFactory implements DrawableShapeCreator {
     }
 
     @Override
-    public DrawableShape[] create(int num) throws IllegalArgumentException{
+    public DrawableShape[] create(int num){
+
+        if (num < 0) throw new IllegalArgumentException(num + " is not valid number.");
 
         Random r = new Random();
         DrawableShape[] shapes = new DrawableShape[num];
@@ -42,7 +44,7 @@ public class RandomShapeFactory implements DrawableShapeCreator {
                 Point firstPoint = new Point(r.nextInt(width), r.nextInt(height));
 
                 if (typeOfShape.equalsIgnoreCase("circle"))
-                    shape = new Circle(firstPoint, r.nextInt(height / 2));
+                    shape = new Circle(firstPoint, r.nextInt((height / 2)-2) + 1);
 
                 else if (typeOfShape.equalsIgnoreCase("rectangle"))
                     shape = new Rectangle(firstPoint, r.nextInt(width), r.nextInt(height));
@@ -50,7 +52,10 @@ public class RandomShapeFactory implements DrawableShapeCreator {
                 else if (typeOfShape.equalsIgnoreCase("line"))
                     shape = new Line(firstPoint, new Point(r.nextInt(width), r.nextInt(height)));
 
-            } catch (IllegalArgumentException e) {
+                else
+                    throw new WrongShapeTypeException(typeOfShape + " is not valid type of shape.");
+
+            } catch (PointShapeException e) {
                 System.out.println(e.getMessage());
                 continue;
             }

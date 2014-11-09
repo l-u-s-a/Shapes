@@ -21,14 +21,11 @@ public class Shape implements DrawableShape{
     public void drawOnPicture(Picture picture){
         for (Point point : points)
             picture.turnPixelOn(point.getX(), point.getY());
-
-        // Render picture is ASCII-graphics on standard output:
-        picture.renderImageToStream(System.out);
     }
 
     protected void check(int x, int y) {
-        if (x > Main.WIDTH || y > Main.HEIGHT)
-            throw new IllegalArgumentException("Point is out of picture");
+        if (x >= Main.WIDTH || x < 0 ||  y >= Main.HEIGHT || y < 0)
+            throw new PointShapeException("Point is out of picture");
     }
 
     protected void addPoint(int x, int y){

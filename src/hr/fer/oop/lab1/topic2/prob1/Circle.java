@@ -1,9 +1,5 @@
 package hr.fer.oop.lab1.topic2.prob1;
-import hr.fer.oop.lab1.topic2.pic.Picture;
-import hr.fer.oop.lab1.topic2.prob1.Point;
-import hr.fer.oop.lab1.topic2.prob1.Shape;
 
-import java.util.ArrayList;
 
 
 /**
