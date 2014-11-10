@@ -5,39 +5,23 @@ package hr.fer.oop.lab1.topic2.prob1;
 /**
  * Created by luka on 20/10/14.
  */
-public class Circle extends Shape {
+public abstract class Circle extends Shape {
 
     public static int counter;
 
-    private Point center;
+    protected Point center;
 
-    private int radius;
+    protected int radius;
 
-
-
-    public Circle(Point center, int radius) {
-        super("Circle");
+    protected Circle(String name, Point center, int radius){
+        super(name);
         this.center = center;
         this.radius = radius;
         generatePoints();
         incrementCounter();
     }
 
-    public Circle (Circle circle) {
-        this(circle.center, circle.radius);
-    }
-
-    protected void generatePoints() {
-        for (int x = center.getX() - radius + 1; x < (center.getX() + radius); x++) {
-            for (int y = center.getY() - radius + 1; y < (center.getY() + radius); y++) {
-
-                if ((Math.pow(x - center.getX(), 2) + Math.pow(y - center.getY(), 2)) <= Math.pow(radius, 2))
-                    addPoint(x, y);
-            }
-        }
-    }
-
-
+    protected abstract void generatePoints();
 
     private static void incrementCounter() {
         counter++;

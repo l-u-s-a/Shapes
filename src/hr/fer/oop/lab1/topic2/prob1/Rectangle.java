@@ -8,19 +8,19 @@ import java.util.ArrayList;
 /**
  * Created by luka on 20/10/14.
  */
-public class Rectangle extends Shape{
+public abstract class Rectangle extends Shape{
 
     public static int counter;
 
-    private Point topLeftCorner;
+    protected Point topLeftCorner;
 
-    private int width;
+    protected int width;
 
-    private int height;
+    protected int height;
 
 
-    public Rectangle(Point topLeftCorner, int width, int height){
-        super("Rectangle");
+    protected Rectangle(String name, Point topLeftCorner, int width, int height){
+        super(name);
         this.topLeftCorner = topLeftCorner;
         this.width = width;
         this.height = height;
@@ -29,26 +29,11 @@ public class Rectangle extends Shape{
     }
 
 
-    public Rectangle (Rectangle rectangle) {
-        this(rectangle.topLeftCorner, rectangle.width, rectangle.height);
-    }
-
-
-
     private static void incrementCounter() {
         counter++;
     }
 
-    protected void generatePoints() {
-        for (int x = topLeftCorner.getX(); x <= topLeftCorner.getX() + width; x++) {
-            for (int y = topLeftCorner.getY(); y <= topLeftCorner.getY() + height; y++) {
-
-                addPoint(x, y);
-            }
-        }
-    }
-
-
+    protected abstract void generatePoints();
 
 }
 

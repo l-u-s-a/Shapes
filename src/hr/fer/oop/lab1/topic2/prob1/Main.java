@@ -15,18 +15,36 @@ public class Main {
 
     public static void main(String[] args){
 
-        DrawableShapeCreator factory = new RandomShapeFactory(WIDTH, HEIGHT);
+        DrawableShapeCreator shapeStore = new RandomShapeStore(new EmptyShapeFactory());
         Picture picture = new Picture(WIDTH, HEIGHT);
         int numberOfShapes = 0;
         DrawableShape[] shapes = null;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        while (true){
+            System.out.print("What type of shapes do you want? [solid, empty] ");
+            try {
+                String input = reader.readLine();
+                ((RandomShapeStore) shapeStore).setShapeFactory(input);
+
+            } catch (IllegalArgumentException e){
+                System.out.println(e.getMessage());
+                continue;
+            } catch (IOException e){
+                e.printStackTrace();
+                System.exit(1);
+            }
+            break;
+        }
+
+
         while (true) {
             System.out.print("How much shapes you want: ");
             try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
                 String input = reader.readLine();
                 numberOfShapes = Integer.parseInt(input);
-                shapes = factory.create(numberOfShapes);
-
+                shapes = shapeStore.create(numberOfShapes);
             } catch (IOException e) {
                 e.printStackTrace();
                 System.exit(1);

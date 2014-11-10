@@ -45,21 +45,6 @@ public class Line extends Shape {
 
     protected void generatePoints() {
 
-//        if (isHorizontal()) {
-//
-//            int y = firstPoint.getY();
-//
-//            for (int x = firstPoint.getX(); x <= secondPoint.getX(); x++)
-//                addPoint(x, y);
-//
-//        } else {
-//            int x = firstPoint.getX();
-//
-//            for (int y = firstPoint.getY(); y <= secondPoint.getY(); y++)
-//
-//                addPoint(x, y);
-//        }
-
         int x2 = secondPoint.getX();
         int x1 = firstPoint.getX();
         int y2 = secondPoint.getY();
