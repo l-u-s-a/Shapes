@@ -1,7 +1,7 @@
 package hr.fer.oop.lab1.topic2.prob1;
 
 /**
- * Created by luka on 09/11/14.
+ * Exception for better point analysis
  */
 public class PointShapeException extends ShapeException{
 

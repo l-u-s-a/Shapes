@@ -7,6 +7,8 @@ import hr.fer.oop.lab1.topic2.prob1.Shape;
 import java.util.ArrayList;
 
 /**
+ * Line screen drawing logic
+ *
  * @author = Luka Usalj
  * @version = 1.0
  */
@@ -42,7 +44,7 @@ public class Line extends Shape {
         counter++;
     }
 
-
+    @Override
     protected void generatePoints() {
 
         int x2 = secondPoint.getX();

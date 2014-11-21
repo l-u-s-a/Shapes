@@ -1,7 +1,7 @@
 package hr.fer.oop.lab1.topic2.prob1;
 
 /**
- * Created by luka on 09/11/14.
+ * Interface for creating Shapes
  */
 public interface DrawableShapeCreator {
     public abstract DrawableShape[] create(int num);

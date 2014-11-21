@@ -1,15 +1,15 @@
 package hr.fer.oop.lab1.topic2.prob1;
 
 /**
- * Created by luka on 10/11/14.
+ * This class creates solid rectangles
+ * @author Luka
+ * @version 1.00
  */
 public class SolidRectangle extends Rectangle {
-
 
     public SolidRectangle(Point topLeftCorner, int width, int height) {
         super("SolidRectangle", topLeftCorner, width, height);
     }
-
 
     @Override
     protected void generatePoints() {

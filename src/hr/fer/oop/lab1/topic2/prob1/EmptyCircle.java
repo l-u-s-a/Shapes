@@ -1,7 +1,9 @@
 package hr.fer.oop.lab1.topic2.prob1;
 
 /**
- * Created by luka on 10/11/14.
+ * This class creates empty circles
+ * @author Luka
+ * @version 1.00
  */
 public class EmptyCircle extends Circle {
 
@@ -13,6 +15,7 @@ public class EmptyCircle extends Circle {
         this(circle.center, circle.radius);
     }
 
+    @Override
     protected void generatePoints() {
         for (int x = center.getX() - radius + 1; x < (center.getX() + radius); x++) {
             for (int y = center.getY() - radius + 1; y < (center.getY() + radius); y++) {
@@ -22,6 +25,4 @@ public class EmptyCircle extends Circle {
             }
         }
     }
-
-
 }

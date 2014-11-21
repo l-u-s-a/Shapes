@@ -1,12 +1,11 @@
 package hr.fer.oop.lab1.topic2.prob1;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 /**
- * Created by luka on 09/11/14.
+ * Shape store
  */
 public class RandomShapeStore implements DrawableShapeCreator {
 

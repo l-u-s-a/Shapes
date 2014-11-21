@@ -3,7 +3,8 @@ package hr.fer.oop.lab1.topic2.prob1;
 
 
 /**
- * Created by luka on 20/10/14.
+ * Abstract class for creating circles
+ * @author Luka
  */
 public abstract class Circle extends Shape {
 
@@ -20,8 +21,6 @@ public abstract class Circle extends Shape {
         generatePoints();
         incrementCounter();
     }
-
-    protected abstract void generatePoints();
 
     private static void incrementCounter() {
         counter++;

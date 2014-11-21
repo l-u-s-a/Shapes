@@ -6,7 +6,7 @@ import hr.fer.oop.lab1.topic2.pic.PictureDisplay;
 import java.util.ArrayList;
 
 /**
- * Created by luka on 20/10/14.
+ * Abstract class for creating circles
  */
 public abstract class Rectangle extends Shape{
 
@@ -28,12 +28,9 @@ public abstract class Rectangle extends Shape{
         incrementCounter();
     }
 
-
     private static void incrementCounter() {
         counter++;
     }
-
-    protected abstract void generatePoints();
 
 }
 

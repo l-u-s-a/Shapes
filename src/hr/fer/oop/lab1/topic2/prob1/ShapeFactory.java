@@ -1,10 +1,9 @@
 package hr.fer.oop.lab1.topic2.prob1;
 
-import java.util.Random;
-
 /**
- * Created by luka on 10/11/14.
+ * Factory class for solid shapes
  */
+
 public abstract class ShapeFactory {
 
     protected static String[] typeOfShapes = {"rectangle", "circle", "line"};

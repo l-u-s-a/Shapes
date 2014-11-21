@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by luka on 09/11/14.
+ * Abstract class for creating shapes
  */
-public class Shape implements DrawableShape{
+public abstract class Shape implements DrawableShape{
     protected List<Point> points = new ArrayList<Point>();
     private String name;
 
@@ -35,5 +35,11 @@ public class Shape implements DrawableShape{
     public String getName(){
         return name;
     }
+
+
+    /**
+     * This method initializes Shape points
+     */
+    protected abstract void generatePoints();
 
 }

@@ -7,11 +7,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Created by luka on 09/11/14.
+ * Main class of shape drawing simulation
+ * @author Luka
+ * @version 1.00
  */
 public class Main {
-    static final int WIDTH = 100;
-    static final int HEIGHT = 100;
+    static final int WIDTH = 640;
+    static final int HEIGHT = 480;
 
     public static void main(String[] args){
 
@@ -41,10 +43,10 @@ public class Main {
         while (true) {
             System.out.print("How much shapes you want: ");
             try {
-
                 String input = reader.readLine();
                 numberOfShapes = Integer.parseInt(input);
                 shapes = shapeStore.create(numberOfShapes);
+
             } catch (IOException e) {
                 e.printStackTrace();
                 System.exit(1);
@@ -66,7 +68,7 @@ public class Main {
         // Render picture is ASCII-graphics on standard output:
         picture.renderImageToStream(System.out);
 
-        PictureDisplay.showPicture(picture, 7);
+        PictureDisplay.showPicture(picture, 1);
 
     }
 }

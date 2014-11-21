@@ -1,7 +1,9 @@
 package hr.fer.oop.lab1.topic2.prob1;
 
 /**
- * Created by luka on 10/11/14.
+ * This class creates empty rectangles
+ * @author Luka
+ * @version 1.00
  */
 public class EmptyRectangle extends Rectangle {
 

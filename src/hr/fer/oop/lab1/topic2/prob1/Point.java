@@ -1,7 +1,7 @@
 package hr.fer.oop.lab1.topic2.prob1;
 
 /**
- * Created by luka on 20/10/14.
+ * Point implementation
  */
 public class Point {
 
